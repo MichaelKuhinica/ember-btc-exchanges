@@ -1,0 +1,12 @@
+body {
+  padding-left: 10px;
+}
+div.exchange {
+  border-bottom-width: 1px;
+  border-bottom-style: inset;
+  margin: 5px 0px 5px 10px;
+}
+
+div.list {
+  padding-top: 20px;
+}
