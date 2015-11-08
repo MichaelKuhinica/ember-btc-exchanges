@@ -1,18 +1,37 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
-export default DS.RESTSerializer.extend({
-  normalizePayload(modelClass) {
-    var payLoad = {};
-    var i = 0;
-    for (var key in modelClass) {
-      if (modelClass.hasOwnProperty(key)) {
+export default DS.JSONAPISerializer.extend({
+  keyForAttribute: function(attr, method) {
+    if(method === 'deserialize') {
+      switch (attr) {
+        case "displayURL":
+            return "display_URL";
+        default:
+            return Ember.String.decamelize(attr);
+      }
+    } else {
+      return Ember.String.camelize(attr);
+    }
+  },
+  normalizeResponse (store, primaryModelClass, payload, id, requestType)  {
+    var data = [];
+    var transformedPayload = {};
+    for (var key in payload) {
+      if (payload.hasOwnProperty(key)) {
+        let obj = payload[key];
         if(key !== "timestamp") {
-          payLoad[i++] = modelClass[key];
+          data.push({
+            id: key,
+            attributes: obj,
+          });
+        } else {
+          transformedPayload['meta'] = {timestamp: obj};
         }
       }
     }
-    console.log(payLoad);
-    return this._super(payLoad);
+    transformedPayload['data'] = data;
+    return this._super(store, primaryModelClass, transformedPayload, id, requestType);
   },
   modelNameFromPayloadKey() {
     return this._super("exchange");
