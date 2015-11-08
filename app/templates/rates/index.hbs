@@ -1,11 +1,27 @@
-<div class="row">
-  {{#each model as |xc|}}
-    <div class="col-md-4">
-        {{xc}}
+{{#each model as |xc|}}
+  <div class="row exchange">
+    <div class="col-xs-3">
+      <a href="{{xc.displayURL}}">
+        {{xc.displayName}}
+      </a>
     </div>
-  {{/each}}
-  <div class="col-md-4">
-    LOL
+    <div class="col-xs-3">
+      <div class="row">
+        <div class="col-md-12">
+          <small> Ask </small>
+          <strong> $ {{xc.ask}} </strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <small> Bid </small>
+          <strong> $ {{xc.bid}} </strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <small> Last </small>
+      <big><strong>$ {{xc.last}}</strong></big>
+    </div>
   </div>
-</div>
-{{outlet}}
+{{/each}}
