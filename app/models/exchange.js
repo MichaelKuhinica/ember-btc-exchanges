@@ -6,5 +6,7 @@ export default DS.Model.extend({
   source: DS.attr('string'),
   volumeBtc: DS.attr('number'),
   volumePercent: DS.attr('number'),
-  rate: DS.belongsTo('rate')
+  ask: DS.attr('number'),
+  bid: DS.attr('number'),
+  last: DS.attr('number')
 });

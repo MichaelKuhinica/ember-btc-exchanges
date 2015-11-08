@@ -20,6 +20,8 @@ export default DS.JSONAPISerializer.extend({
     for (var key in payload) {
       if (payload.hasOwnProperty(key)) {
         let obj = payload[key];
+        Ember.merge(obj, obj.rates);
+        delete obj.rates;
         if(key !== "timestamp") {
           data.push({
             id: key,
