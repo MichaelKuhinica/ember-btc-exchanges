@@ -1,6 +1,11 @@
 <div class="row">
+  {{#each model as |xc|}}
+    <div class="col-md-4">
+        {{xc}}
+    </div>
+  {{/each}}
   <div class="col-md-4">
-    {{model.bitfinex.display_name}}
+    LOL
   </div>
 </div>
 {{outlet}}
