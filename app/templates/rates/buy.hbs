@@ -1,31 +1,6 @@
 <h1>Buying Bitcoin from {{model.displayName}}</h1>
 {{#token-fields model=model direction="buy"}}
-  <div class="row">
-    <div class="col-md-12 amount-input">
-      <form class="form-inline">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputAmount">Amount</label>
-          <div class="input-group">
-            <div class="input-group-addon">BTC</div>
-            {{input class="form-control" type="text" value=amount placeholder="How much in BTC?"}}
-          </div>
-        </div>
-        <button class="btn btn-default" {{action 'orderBtc' amount model 'buy'}}>Buy</button>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-12 total-price">
-          $ {{multiplier model.ask amount}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <small>total</small>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{#amount-field amount=amount direction="buy"}}
+    $ {{multiplier model.ask amount}}
+  {{/amount-field}}
 {{/token-fields}}
