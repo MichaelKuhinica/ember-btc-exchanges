@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('exchange', 'Unit | Serializer | exchange', {
+moduleForModel('rate', 'Unit | Serializer | rate', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:exchange']
+  needs: ['serializer:rate']
 });
 
 // Replace this with your real tests.

@@ -36,6 +36,6 @@ export default DS.JSONAPISerializer.extend({
     return this._super(store, primaryModelClass, transformedPayload, id, requestType);
   },
   modelNameFromPayloadKey() {
-    return this._super("exchange");
+    return this._super("rate");
   }
 });

@@ -4,7 +4,7 @@ export default ApplicationAdapter.extend({
   host: 'https://api.bitcoinaverage.com/exchanges/USD',
   pathForType: function(type) {
     switch (type) {
-      case 'exchange':
+      case 'rate':
         return '';
       default:
         return type;
