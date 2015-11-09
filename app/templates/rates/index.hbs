@@ -1,11 +1,11 @@
 {{#each model as |xc|}}
   <div class="row exchange">
-    <div class="col-xs-3">
+    <div class="col-md-3">
       <a href="{{xc.displayURL}}">
         {{xc.displayName}}
       </a>
     </div>
-    <div class="col-xs-3">
+    <div class="col-md-3">
       <div class="row">
         <div class="col-md-12">
           <small> Ask </small>
@@ -19,9 +19,13 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-3">
+    <div class="col-md-3">
       <small> Last </small>
       <big><strong>$ {{xc.last}}</strong></big>
+    </div>
+    <div class="col-md-3">
+      <button type="button" {{action 'showModal' 'rates/token' xc}} class="btn btn-success">Buy</button>
+      <button type="button" {{action 'showModal' 'rates/sell'}} class="btn btn-danger">Sell</button>
     </div>
   </div>
 {{/each}}
