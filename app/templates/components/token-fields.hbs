@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      To continue, you need to create an API token and secret for your account at <a href="{{model.displayUrl}}">{{model.displayName}}</a>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label>Token</label>
+        {{input class="form-control" type="text" value=model.token autofocus="autofocus"}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label>Secret</label>
+        {{input class="form-control" type="text" value=model.secret}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    {{yield}}
+  </div>
+</div>
