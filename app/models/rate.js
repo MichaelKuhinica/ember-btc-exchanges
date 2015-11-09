@@ -10,5 +10,6 @@ export default DS.Model.extend({
   volumePercent: DS.attr('number'),
   ask: DS.attr('number'),
   bid: DS.attr('number'),
-  last: DS.attr('number')
+  last: DS.attr('number'),
+  orders: DS.hasMany('exchange', {polymorphic: true})
 });
