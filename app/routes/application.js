@@ -14,6 +14,19 @@ export default Ember.Route.extend({
         outlet: 'modal',
         parentView: 'application'
       });
+    },
+    orderBtc: function(amount, m, direction) {
+      var order = this.store.createRecord(m.id+'_'+direction, {
+        amount: amount,
+        rate: m
+      });
+      var promise = order.save();
+      var that = this;
+      promise.then(function(value) {
+        that.send('showModal', 'modals/notice', value.id);
+      }, function(error) {
+        that.send('showModal', 'modals/error', error);
+      });
     }
   }
 });
