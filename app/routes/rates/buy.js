@@ -7,11 +7,5 @@ export default Ember.Route.extend({
     }
     this.transitionTo('rates.index');
   },
-  actions: {
-    buyBtc: function(amount, m) {
-      console.log(amount);
-      console.log(m);
-    }
-  },
   amount: 0
 });
