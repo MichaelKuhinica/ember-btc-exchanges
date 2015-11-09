@@ -1,21 +1,7 @@
 <h1>Buying Bitcoin from {{model.displayName}}</h1>
-{{#token-fields model=model}}
+{{#token-fields model=model direction="buy"}}
   <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-12 btc-price">
-          $ {{model.ask}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <small>per BTC</small>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 amount-input">
       <form class="form-inline">
         <div class="form-group">
           <label class="sr-only" for="exampleInputAmount">Amount</label>
@@ -24,7 +10,7 @@
             {{input class="form-control" type="text" value=amount placeholder="How much in BTC?"}}
           </div>
         </div>
-        <button class="btn btn-default" {{action 'buyBtc' amount model}}>Buy</button>
+        <button class="btn btn-default" {{action 'orderBtc' amount model 'buy'}}>Buy</button>
       </form>
     </div>
   </div>
