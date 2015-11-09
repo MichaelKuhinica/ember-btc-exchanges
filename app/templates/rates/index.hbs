@@ -24,7 +24,9 @@
       <big><strong>$ {{xc.last}}</strong></big>
     </div>
     <div class="col-md-3">
-      <button type="button" {{action 'showModal' 'rates/token' xc}} class="btn btn-success">Buy</button>
+      {{#link-to "rates.buy" xc.id class="btn btn-success"}}
+        Buy
+      {{/link-to}}
       <button type="button" {{action 'showModal' 'rates/sell'}} class="btn btn-danger">Sell</button>
     </div>
   </div>
