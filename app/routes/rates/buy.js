@@ -6,5 +6,12 @@ export default Ember.Route.extend({
       return this.store.find('exchange', params.exchange);
     }
     this.transitionTo('rates.index');
-  }
+  },
+  actions: {
+    buyBtc: function(amount, m) {
+      console.log(amount);
+      console.log(m);
+    }
+  },
+  amount: 0
 });

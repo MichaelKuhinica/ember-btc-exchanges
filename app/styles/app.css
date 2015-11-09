@@ -20,3 +20,13 @@ div.list {
 .form-group {
   text-align: left;
 }
+
+.total-price {
+  font-size: 36px;
+  padding-top: 15px;
+}
+
+.btc-price {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
