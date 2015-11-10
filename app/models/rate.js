@@ -11,5 +11,6 @@ export default DS.Model.extend({
   ask: DS.attr('number'),
   bid: DS.attr('number'),
   last: DS.attr('number'),
+  supported: DS.attr('boolean'),
   orders: DS.hasMany('exchange', {polymorphic: true})
 });

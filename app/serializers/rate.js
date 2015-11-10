@@ -23,6 +23,11 @@ export default DS.JSONAPISerializer.extend({
         Ember.merge(obj, obj.rates);
         delete obj.rates;
         if(key !== "timestamp") {
+          var isSupported = false;
+          if(this.SUPPORTED.contains(key)) {
+            isSupported = true;
+          }
+          obj['supported'] = isSupported;
           data.push({
             id: key,
             attributes: obj,
@@ -37,5 +42,8 @@ export default DS.JSONAPISerializer.extend({
   },
   modelNameFromPayloadKey() {
     return this._super("rate");
-  }
+  },
+  SUPPORTED: [
+    'coinbase'
+  ]
 });

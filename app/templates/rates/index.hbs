@@ -24,12 +24,14 @@
       <big><strong>$ {{xc.last}}</strong></big>
     </div>
     <div class="col-md-3">
-      {{#link-to "rates.buy" xc.id class="btn btn-success"}}
-        Buy
-      {{/link-to}}
-      {{#link-to "rates.sell" xc.id class="btn btn-danger"}}
-        Sell
-      {{/link-to}}
+      {{#if xc.supported}}
+        {{#link-to "rates.buy" xc.id class="btn btn-success"}}
+          Buy
+        {{/link-to}}
+        {{#link-to "rates.sell" xc.id class="btn btn-danger"}}
+          Sell
+        {{/link-to}}
+      {{/if}}
     </div>
   </div>
 {{/each}}
