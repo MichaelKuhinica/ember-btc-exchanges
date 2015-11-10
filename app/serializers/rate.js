@@ -44,6 +44,7 @@ export default DS.JSONAPISerializer.extend({
     return this._super("rate");
   },
   SUPPORTED: [
-    'coinbase'
+    'coinbase',
+    'bitex'
   ]
 });
