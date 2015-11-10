@@ -1,3 +1,6 @@
+{{#link-to "rates.index" class="pull-left"}}
+  <small>Back</small>
+{{/link-to}}
 <h1>Buying Bitcoin from {{model.displayName}}</h1>
 {{#token-fields model=model direction="buy"}}
   {{#amount-field amount=amount direction="buy" action="orderBtc" model=model}}
