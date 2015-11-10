@@ -7,8 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('rates', { path: '/' }, function() {
-    this.route('buy', { path: "/:exchange" });
-    this.route('sell', { path: "/:exchange" });
+    this.route('buy', { path: "/buy/:exchange" });
+    this.route('sell', { path: "/sell/:exchange" });
   });
 });
 

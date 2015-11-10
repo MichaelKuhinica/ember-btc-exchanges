@@ -27,7 +27,9 @@
       {{#link-to "rates.buy" xc.id class="btn btn-success"}}
         Buy
       {{/link-to}}
-      <button type="button" {{action 'showModal' 'rates/sell'}} class="btn btn-danger">Sell</button>
+      {{#link-to "rates.sell" xc.id class="btn btn-danger"}}
+        Sell
+      {{/link-to}}
     </div>
   </div>
 {{/each}}

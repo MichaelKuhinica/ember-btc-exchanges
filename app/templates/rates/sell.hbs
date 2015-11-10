@@ -1,7 +1,6 @@
-{{outlet}}
 <h1>Selling Bitcoin to {{model.displayName}}</h1>
 {{#token-fields model=model direction="sell"}}
-  {{#amount-field amount=amount direction="sell"}}
+  {{#amount-field amount=amount direction="sell" action="orderBtc" model=model}}
     $ {{multiplier model.ask amount}}
   {{/amount-field}}
 {{/token-fields}}
